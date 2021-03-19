@@ -1,0 +1,2 @@
+# PROJETO FINAL-OBJETIVO
+    Criar um aplicativo que busque beneficiar comerciantes e clientes da cidade de Esperança, visando dessa forma mais compras onlines e menos aglomeração. Além disso, terá informações sobre o COVID-19, como as informações básicas, os cuidados a serem tomados, a situação que a cidade em questão se encontra e o controle da vacinação.
