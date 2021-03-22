@@ -1,6 +1,6 @@
 let Sequelize = require("sequelize");
 let db = new Sequelize(
-    "postgres://wjqrieoxpabanq:0326806ed0e8f0e1d1b521e9567e590a2b25daf6b8cdcc66fe087f228472b6e6@ec2-52-4-171-132.compute-1.amazonaws.com:5432/dak1h011ronaws.com:5432/dak1h011ronaws.com:5432/dak1h011ronaws.com",
+    "postgres://iarmqxhsfubkyo:6ec98fbfd8f8bd1f913bfbe81b0cef24470a6d49b7052a8f9c22c7b046f8b26a@ec2-34-195-233-155.compute-1.amazonadhiglm.com:5432/dfiglm",
 {
     dialect: "postgres",
     dialectOptions: {
