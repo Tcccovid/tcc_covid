@@ -1,7 +1,12 @@
 const {Pool} = require("pg");
 async function criarConexao() {
     const pool = new Pool({
-        connectionString: 'postgres://iarmqxhsfubkyo:6ec98fbfd8f8bd1f913bfbe81b0cef24470a6d49b7052a8f9c22c7b046f8b26a@ec2-34-195-233-155.compute-1.amazonadhiglm.com:5432/dfiglm', 
+        user:'iarmqxhsfubkyo',
+        password: '6ec98fbfd8f8bd1f913bfbe81b0cef24470a6d49b7052a8f9c22c7b046f8b26a',
+        port: '5432',
+        host: 'ec2-34-195-233-155.compute-1.amazonaws.com',
+        database: 'dfiglkohclgdhm',
+        
         ssl: {
             rejectUnauthorized: false
         }
@@ -127,9 +132,7 @@ async function criarConexao() {
     ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
         FOREIGN KEY (fk_Vacina_id_vacina)
         REFERENCES Vacina (id_vacina)
-        ON DELETE SET NULL;`
-
-    );
+        ON DELETE SET NULL;`);
     /*let tuplas = res.rows;
     for(let tupla of tuplas){
         console.lof(tupla);
@@ -137,4 +140,5 @@ async function criarConexao() {
     }*/
     con.release();
 }
+
 criarConexao();
