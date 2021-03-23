@@ -48,8 +48,9 @@ CREATE TABLE Servico (
 );
 
 CREATE TABLE Municipio (
-    id_cep integer PRIMARY KEY,
-    nome da cidade varchar
+    id_municipio integer PRIMARY KEY,
+    nome_da_cidade varchar,
+    Campo integer
 );
 
 CREATE TABLE Posto (
@@ -76,17 +77,17 @@ CREATE TABLE Possui (
  
 ALTER TABLE Estabelecimento ADD CONSTRAINT FK_Estabelecimento_2
     FOREIGN KEY (fk_Municipio_id_cep)
-    REFERENCES Municipio (id_cep)
+    REFERENCES Municipio (id_municipio)
     ON DELETE RESTRICT;
  
 ALTER TABLE SituacaoCidade ADD CONSTRAINT FK_SituacaoCidade_2
     FOREIGN KEY (fk_Municipio_id_cep)
-    REFERENCES Municipio (id_cep)
+    REFERENCES Municipio (id_municipio)
     ON DELETE RESTRICT;
  
 ALTER TABLE Posto ADD CONSTRAINT FK_Posto_2
     FOREIGN KEY (fk_Municipio_id_cep)
-    REFERENCES Municipio (id_cep)
+    REFERENCES Municipio (id_municipio)
     ON DELETE RESTRICT;
  
 ALTER TABLE contem ADD CONSTRAINT FK_contem_1

@@ -6,7 +6,7 @@ async function criarConexao() {
         port: '5432',
         host: 'ec2-34-195-233-155.compute-1.amazonaws.com',
         database: 'dfiglkohclgdhm',
-        
+
         ssl: {
             rejectUnauthorized: false
         }
@@ -63,8 +63,9 @@ async function criarConexao() {
     );
     
     CREATE TABLE Municipio (
-        id_cep integer PRIMARY KEY,
-        nome da cidade varchar
+        id_municipio integer PRIMARY KEY,
+        nome_da_cidade varchar,
+        Campo integer
     );
     
     CREATE TABLE Posto (
@@ -91,17 +92,17 @@ async function criarConexao() {
      
     ALTER TABLE Estabelecimento ADD CONSTRAINT FK_Estabelecimento_2
         FOREIGN KEY (fk_Municipio_id_cep)
-        REFERENCES Municipio (id_cep)
+        REFERENCES Municipio (id_municipio)
         ON DELETE RESTRICT;
      
     ALTER TABLE SituacaoCidade ADD CONSTRAINT FK_SituacaoCidade_2
         FOREIGN KEY (fk_Municipio_id_cep)
-        REFERENCES Municipio (id_cep)
+        REFERENCES Municipio (id_municipio)
         ON DELETE RESTRICT;
      
     ALTER TABLE Posto ADD CONSTRAINT FK_Posto_2
         FOREIGN KEY (fk_Municipio_id_cep)
-        REFERENCES Municipio (id_cep)
+        REFERENCES Municipio (id_municipio)
         ON DELETE RESTRICT;
      
     ALTER TABLE contem ADD CONSTRAINT FK_contem_1
@@ -132,7 +133,9 @@ async function criarConexao() {
     ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
         FOREIGN KEY (fk_Vacina_id_vacina)
         REFERENCES Vacina (id_vacina)
-        ON DELETE SET NULL;`);
+        ON DELETE SET NULL;
+
+    `);
     /*let tuplas = res.rows;
     for(let tupla of tuplas){
         console.lof(tupla);
